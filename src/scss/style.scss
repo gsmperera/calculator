@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+$background-gradient: linear-gradient(to left, #8e0e00, #1f1c18);
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+    margin: 0;
+    position: relative;
+    background: $background-gradient;
+    color: #dedede;
+    font-family: 'Roboto', sans-serif;
+}
+
+#root {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    #calculator {
+        width: 95%;
+        max-width: 250px;
+        height: 300px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        grid-gap: 2px;
+        grid-template-areas:
+            'display display display display'
+            'clear clear divide multiply'
+            'seven eight nine subtract'
+            'four five six'
+            'one two three equals'
+            'zero zero decimal equals';
+
+        #display {
+            grid-column: 1/5;
+            height: 70px;
+            position: relative;
+            overflow: hidden;
+
+            #equation {
+                margin: 0;
+                position: absolute;
+                top: 10px;
+                right: 5px;
+                font-size: 0.8rem;
+            }
+            #inputValue {
+                margin: 0;
+                position: absolute;
+                bottom: 10px;
+                right: 5px;
+                font-size: 1.5rem;
+            }
+        }
+
+        #clear {
+            grid-column: 1/3;
+        }
+        #equals {
+            grid-column: 4/5;
+            grid-row: 5/7;
+        }
+        #zero {
+            grid-column: 1/3;
+        }
+
+        .btn {
+            user-select: none;
+            transition: border 0.3 ease-in-out;
+        }
+        .btn:active {
+            color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .grid-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .display {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .clear {
+            background-color: rgba(200, 0, 0, 0.5);
+        }
+        .clear:hover {
+            background-color: rgba(200, 0, 0, 0.6);
+        }
+        .numbers {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .numbers:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        .operators {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        .operators:hover {
+            background-color: rgba(0, 0, 0, 1);
+        }
+        .equals {
+            background-color: rgba(0, 0, 200, 0.5);
+        }
+        .equals:hover {
+            background-color: rgba(0, 0, 200, 0.7);
+        }
+    }
+
+    #footer {
+        position: absolute;
+        bottom: 0;
+        color: rgba(255, 255, 255, 0.3);
+        font-size: 0.75rem;
+    }
+}
