@@ -2,7 +2,7 @@
 
 # React Calculator
 
-See live github page here: [gsmperera/github.io/calculator-react](https:/gsmperera.github.io/calculator-react)
+See live github page here: https://gsmperera.github.io/calculator-react
 
 This web app was buid using Reactjs as a [freecodecamp.org challenge](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-javascript-calculator).
 
